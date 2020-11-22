@@ -26,15 +26,10 @@ job_config = bigquery.LoadJobConfig(
 )
 
 
-def process_interview(data, context):
-    print('new csv file uploaded...')
+def bq_insert(data, context):
+    print('new csv file {} uploaded, inserting to BigQuery...'.format(data['name']))
     uri = "gs://" + data['bucket'] + "/" + data['name']
     load_job = client.load_table_from_uri(uri, table_id, job_config=job_config)
     load_job.result()  # Waits for the job to complete.
     destination_table = client.get_table(table_id)
     print("Loaded {} rows.".format(destination_table.num_rows))
-
-
-
-
-
