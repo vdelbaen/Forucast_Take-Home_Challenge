@@ -1,4 +1,4 @@
-﻿# Forucast_Take-Home_Challenge
+﻿# Fourcast_Take-Home_Challenge
 
 1st task:
 See Take-Home Challenge.pptx
